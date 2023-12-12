@@ -13,12 +13,17 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+button {
+  appearance: none;
+  background: none;
+  font-family: var(--font-press);
+}
 
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--font-inter), sans-serif;
-  font-variation-settings: "wght" var(--weight-main);
+  font-weight: var(--weight-main);
   background-image: repeating-linear-gradient(90deg, var(--gradient-grid) 0 2px, rgba(0, 0, 0, 0) 2px 4px),
     repeating-linear-gradient(var(--gradient-grid) 0 2px, rgba(0, 0, 0, 0) 2px 4px),
     linear-gradient(var(--gradient-start), var(--gradient-end));
@@ -58,12 +63,10 @@
 
 .header__title-decor {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  font-size: 65px;
 }
 
 .header__title-name {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  font-size: 23px;
 }
 
 .theme-menu__list {
@@ -76,15 +79,36 @@
 }
 
 .theme-menu__button {
-  appearance: none;
   border: none;
-  background: none;
-  text-transform: uppercase;
   font-size: 14px;
   position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.theme-menu__button::after {
+  transition: all 0.3s ease;
+  content: "";
+  display: block;
+  background-color: var(--main-color);
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
 }
 
 .theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+.theme-menu__button:disabled,
+.theme-menu__button:hover,
+.theme-menu__button:focus-visible {
   opacity: 0.6;
 }
 
@@ -95,10 +119,110 @@
 }
 
 .card {
+  border: 2px solid var(--main-color);
   background-color: var(--background-color);
+}
+
+.card__title {
+  font-weight: var(--weight-title);
+  padding: 5px 10px;
+}
+
+.card__image-container {
+  position: relative;
+}
+
+.card__label {
+  font-family: var(--font-press);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-transform: uppercase;
+  color: var(--main-color);
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-size: 14px;
+  text-shadow: -1px 0 0 var(--background-color), 1px 0 0 var(--background-color), 0 -1px 0 var(--background-color),
+    0 1px 0 var(--background-color);
+}
+
+@supports ((text-stroke: 1px var(--background-color)) or (-webkit-text-stroke: 1px var(--background-color))) {
+  .card__label {
+    text-shadow: none;
+    text-stroke: 1px var(--background-color);
+    -webkit-text-stroke: 1px var(--background-color);
+  }
 }
 
 .card__image {
   width: 100%;
   object-fit: cover;
 }
+
+.card__after-image-container {
+  padding: 25px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  margin-bottom: 25px;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: end;
+}
+
+.card__icon-button {
+  border: none;
+}
+
+.card__like-button {
+  padding: 9px 17px;
+  min-inline-size: 130px;
+  block-size: 39px px;
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.footer__button-save {
+  min-width: 306px;
+  background-color: var(--background-color);
+  padding: 15px 18px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-save__icon {
+  inline-size: 21px;
+  /* aspect-ratio: 1 / 1; */
+}
+
+.button-save__text {
+  text-wrap: nowrap;
+  font-size: 14px;
+  line-height: 90%;
+}
+
+@media (max-width: 900px) {
+  .footer__button-save {
+    max-width: 306px;
+  }
+  .button-save__icon {
+    inline-size: 28px;
+  }
+}
+
+/* @media (width <= 375px) {
+} */
