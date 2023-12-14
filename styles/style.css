@@ -29,6 +29,7 @@
   flex-direction: column;
   align-items: center;
   color: var(--main-color);
+  font-variation-settings: "wght" var(--weight-main, 400);
 }
 
 .page > * {

@@ -14,11 +14,11 @@
 */
 
 .theme-menu__button {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .theme-menu__button::after {
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   content: "";
   display: block;
   background-color: var(--main-color);
