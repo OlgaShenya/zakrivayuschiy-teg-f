@@ -149,7 +149,7 @@
 }
 
 .card__image {
-  width: 100%;
+  inline-size: 100%;
   object-fit: cover;
 }
 
@@ -171,7 +171,7 @@
 
 .card:nth-child(6) .card__image {
   transition: filter 1s ease;
-  filter: grayscale(50%);
+  filter: grayscale(100%) invert(100%);
 }
 
 .card:nth-child(6):hover .card__image {
@@ -299,16 +299,16 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: clamp(341px, 100%, 357px);
-  height: 195px;
+  inline-size: clamp(341px, 100%, 357px);
+  block-size: 195px;
   background-color: var(--background-color);
   padding: 30px;
   border-color: var(--main-color);
 }
 
 #dialog .button-save__icon {
-  width: 39px;
-  height: 39px;
+  inline-size: 39px;
+  block-size: 39px;
 }
 
 .dialog-message-container {
@@ -326,7 +326,7 @@
   font-weight: 400;
   line-height: 150%; /* 21px */
   text-transform: uppercase;
-  width: clamp(198px, 100%, 264px);
+  inline-size: clamp(198px, 100%, 264px);
 }
 
 .dialog-button {
@@ -345,6 +345,3 @@
     inline-size: 28px;
   }
 }
-
-/* @media (width <= 375px) {
-} */
