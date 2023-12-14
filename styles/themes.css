@@ -12,6 +12,7 @@
   --gradient-grid: #000;
   --gradient-start: #007f0c;
   --gradient-end: #004306;
+  --button-text-color: #00cc14;
 }
 
 :root.theme-light {
@@ -22,6 +23,7 @@
   --gradient-grid: #d3d3d3;
   --gradient-start: #e7e7e7 0 0.01%;
   --gradient-end: #1a1a1a;
+  --button-text-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -33,5 +35,6 @@
     --gradient-grid: #000;
     --gradient-start: #007f0c;
     --gradient-end: #004306;
+    --button-text-color: #00cc14;
   }
 }
