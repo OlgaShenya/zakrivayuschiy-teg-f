@@ -14,8 +14,7 @@
 */
 
 .theme-menu__button {
-  transition: transform 0.3s ease;
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .theme-menu__button::after {

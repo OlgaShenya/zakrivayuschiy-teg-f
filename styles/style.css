@@ -156,6 +156,7 @@
 
 .card__image-container {
   border-bottom: 2px solid var(--main-color, #00cc14);
+  position: relative;
 }
 
 .card__image {
@@ -205,10 +206,6 @@
 
 .opacity:hover {
   filter: none;
-}
-
-.card__image-container {
-  position: relative;
 }
 
 .card__after-image-container {
