@@ -209,7 +209,8 @@
 }
 
 .card__after-image-container {
-  padding: 25px;
+  padding: 26px;
+  line-height: 21px;
 }
 
 .card__text {
@@ -375,5 +376,10 @@
   #dialog .button-save__icon {
     inline-size: 52px;
     block-size: 52px;
+  }
+
+  .content__button-save .button-save__icon {
+    inline-size: 28px;
+    block-size: 28px;
   }
 }
