@@ -17,7 +17,7 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--font-inter, sans-serif);
+  font-family: var(--font-main, sans-serif);
   background-image: repeating-linear-gradient(90deg, var(--gradient-grid) 0 2px, rgba(0, 0, 0, 0) 2px 4px),
     repeating-linear-gradient(var(--gradient-grid) 0 2px, rgba(0, 0, 0, 0) 2px 4px),
     linear-gradient(var(--gradient-start), var(--gradient-end));
@@ -44,7 +44,7 @@
   flex-direction: column;
   padding-top: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
   padding-bottom: 21px;
-  font-family: var(--font-press, fantasy);
+  font-family: var(--font-accent, fantasy);
   gap: 21px;
   margin-bottom: 100px;
 }
@@ -132,7 +132,7 @@
 }
 
 .card__label {
-  font-family: var(--font-press, fantasy);
+  font-family: var(--font-accent, fantasy);
   opacity: 0.5;
   mix-blend-mode: hard-light;
   text-transform: uppercase;
@@ -346,7 +346,7 @@
 
 .dialog-message-text {
   color: var(--main-color, #000000);
-  font-family: var(--font-press, fantasy);
+  font-family: var(--font-accent, fantasy);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
